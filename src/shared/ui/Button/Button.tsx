@@ -4,7 +4,7 @@ import cn from 'classnames';
 import styles from './Button.module.scss';
 
 type TVariant = 'primary';
-type TSize = 'big' | 'small';
+type TSize = 'big' | 'medium' | 'small';
 
 interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: TVariant;
@@ -15,7 +15,7 @@ export const Button: FC<IProps> = ({
   children,
   className,
   variant = 'primary',
-  size = 'small',
+  size = 'medium',
   ...props
 }) => {
   return (

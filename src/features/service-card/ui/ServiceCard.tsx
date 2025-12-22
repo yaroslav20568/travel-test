@@ -5,6 +5,7 @@ import { FC, memo } from 'react';
 import { useCartStore } from '@/features/cart';
 
 import { IService } from '@/entities/service/model';
+import { formatPrice } from '@/entities/service/utils';
 
 import { Button } from '@/shared';
 
@@ -24,7 +25,7 @@ export const ServiceCard: FC<IProps> = memo(({ service }) => {
     <div className={s.item}>
       <div className={s.content}>
         <h3 className={s.title}>{service.title}</h3>
-        <p className={s.price}>{service.price} ₽</p>
+        <p className={s.price}>{formatPrice(service.price)} ₽</p>
       </div>
       <Button onClick={() => addItem(service)} disabled={isInCart} size="big">
         {isInCart ? 'Already added' : 'Add'}

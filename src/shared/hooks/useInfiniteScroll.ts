@@ -5,22 +5,20 @@ import {
   useInfiniteQuery
 } from '@tanstack/react-query';
 
-interface IUseInfiniteScrollParams<TData, TParams> {
+interface IOptions<TData, TParams> {
   queryKey: QueryKey;
   queryFn: (
     context: QueryFunctionContext<QueryKey, number>,
     params?: TParams
   ) => Promise<TData[]>;
   params?: TParams;
-  limit?: number;
 }
 
 export const useInfiniteScroll = <TData, TParams = unknown>({
   queryKey,
   queryFn,
-  params,
-  limit = 20
-}: IUseInfiniteScrollParams<TData, TParams>) => {
+  params
+}: IOptions<TData, TParams>) => {
   return useInfiniteQuery<
     TData[],
     Error,
@@ -28,11 +26,11 @@ export const useInfiniteScroll = <TData, TParams = unknown>({
     QueryKey,
     number
   >({
-    queryKey: [...queryKey, limit, params],
+    queryKey: [...queryKey, params],
     queryFn: (context: QueryFunctionContext<QueryKey, number>) =>
       queryFn(context, params),
     getNextPageParam: (lastPage, allPages) => {
-      if (lastPage.length < limit) {
+      if (lastPage.length === 0) {
         return undefined;
       }
       return allPages.length + 1;

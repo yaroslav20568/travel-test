@@ -23,11 +23,13 @@ export const Header: FC<IProps> = ({ title }) => {
   return (
     <header className={s.header}>
       <div className={s.title}>{title}</div>
-      {isMobile && (
-        <Button onClick={handleOpenCart} className={s.cartButton}>
-          Open Cart
-        </Button>
-      )}
+      <Button
+        onClick={handleOpenCart}
+        className={s.cartButton}
+        disabled={!isMobile}
+      >
+        Open Cart
+      </Button>
     </header>
   );
 };

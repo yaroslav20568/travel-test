@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes, FC } from 'react';
 import cn from 'classnames';
 
-import styles from './Button.module.scss';
+import s from './Button.module.scss';
 
 type TVariant = 'primary';
 type TSize = 'big' | 'medium' | 'small';
@@ -9,6 +9,7 @@ type TSize = 'big' | 'medium' | 'small';
 interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: TVariant;
   size?: TSize;
+  fullWidth?: boolean;
 }
 
 export const Button: FC<IProps> = ({
@@ -16,11 +17,18 @@ export const Button: FC<IProps> = ({
   className,
   variant = 'primary',
   size = 'medium',
+  fullWidth = false,
   ...props
 }) => {
   return (
     <button
-      className={cn(styles.button, styles[variant], styles[size], className)}
+      className={cn(
+        s.button,
+        s[variant],
+        s[size],
+        fullWidth && s.fullWidth,
+        className
+      )}
       {...props}
     >
       {children}

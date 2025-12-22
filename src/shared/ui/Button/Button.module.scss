@@ -6,10 +6,11 @@
   outline: none;
   border-radius: 6px;
   cursor: pointer;
+  will-change: background-color, color;
   transition:
-    background-color 0.2s,
-    color 0.2s,
-    border-color 0.2s;
+    background-color 0.3s,
+    color 0.3s,
+    border-color 0.3s;
 
   &.small {
     padding: 4px 8px;
@@ -44,5 +45,9 @@
         background-color: $gray-light;
       }
     }
+  }
+
+  &.fullWidth {
+    width: 100%;
   }
 }

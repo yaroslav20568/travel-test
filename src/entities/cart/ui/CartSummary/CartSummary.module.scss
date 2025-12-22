@@ -49,4 +49,16 @@
       }
     }
   }
+
+  .checkoutButton {
+    margin-top: 12px;
+
+    @include respond-to(tablet) {
+      margin-top: 16px;
+    }
+
+    @include respond-to(desktop) {
+      margin-top: 20px;
+    }
+  }
 }

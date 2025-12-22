@@ -1,0 +1,27 @@
+@use '_variables.scss' as *;
+@import 'normalize.css';
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+body {
+  background-color: $white;
+  font-family: var(--font-inter), sans-serif;
+  color: $black;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+}

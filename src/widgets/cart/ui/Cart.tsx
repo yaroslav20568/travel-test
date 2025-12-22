@@ -26,18 +26,15 @@ export const Cart: FC = () => {
     setIsOpen(false);
   };
 
-  const cartContent =
-    items.length === 0 ? (
-      <CartEmpty />
-    ) : (
-      <>
-        <CartHeader onClose={isMobile ? handleClose : undefined} />
-        <Line />
-        <CartList />
-        <Line />
-        <CartSummary />
-      </>
-    );
+  const cartContent = (
+    <>
+      <CartHeader onClose={isMobile ? handleClose : undefined} />
+      <Line />
+      {items.length === 0 ? <CartEmpty /> : <CartList />}
+      <Line />
+      <CartSummary />
+    </>
+  );
 
   if (isMobile) {
     return (

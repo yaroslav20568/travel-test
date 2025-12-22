@@ -1,0 +1,28 @@
+@use '../../../../shared/styles/variables' as *;
+
+.total {
+  padding-top: 16px;
+  border-top: 2px solid $gray-light;
+
+  .totalContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 16px;
+    background-color: $gray-lighter;
+    border-radius: 6px;
+
+    .totalLabel {
+      font-size: 20px;
+      font-weight: 700;
+      color: $black;
+    }
+
+    .totalPrice {
+      font-size: 24px;
+      font-weight: 700;
+      color: $blue;
+    }
+  }
+}

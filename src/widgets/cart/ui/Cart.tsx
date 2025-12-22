@@ -6,6 +6,8 @@ import { CartHeader, useCartStore } from '@/features/cart';
 
 import { CartEmpty, CartList, CartSummary } from '@/entities/cart/ui';
 
+import { Line } from '@/shared';
+
 import s from './Cart.module.scss';
 
 export const Cart: FC = () => {
@@ -22,7 +24,9 @@ export const Cart: FC = () => {
   return (
     <div className={s.cart}>
       <CartHeader />
+      <Line />
       <CartList />
+      <Line />
       <CartSummary />
     </div>
   );

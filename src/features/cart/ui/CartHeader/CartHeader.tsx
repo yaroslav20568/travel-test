@@ -13,9 +13,9 @@ export const CartHeader: FC = () => {
 
   return (
     <div className={s.header}>
-      <h2 className={s.title}>Корзина</h2>
+      <h2 className={s.title}>Cart</h2>
       <Button onClick={clearCart} className={s.clearButton}>
-        Очистить
+        Clear
       </Button>
     </div>
   );

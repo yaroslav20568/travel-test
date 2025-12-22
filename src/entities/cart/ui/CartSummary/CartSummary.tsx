@@ -14,7 +14,7 @@ export const CartSummary: FC = () => {
   return (
     <div className={s.total}>
       <div className={s.totalContent}>
-        <span className={s.totalLabel}>Итого:</span>
+        <span className={s.totalLabel}>Total:</span>
         <span className={s.totalPrice}>{totalPrice} ₽</span>
       </div>
     </div>

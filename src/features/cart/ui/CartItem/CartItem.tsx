@@ -22,7 +22,7 @@ export const CartItem: FC<ICartItemProps> = ({ id, title, price }) => {
         <p className={s.itemPrice}>{price} ₽</p>
       </div>
       <Button onClick={() => removeItem(id)} className={s.removeButton}>
-        Удалить
+        Remove
       </Button>
     </div>
   );

@@ -26,7 +26,7 @@ export const ServiceCard: FC<IProps> = ({ service }) => {
         <p className={s.price}>{service.price} ₽</p>
       </div>
       <Button onClick={() => addItem(service)} disabled={isInCart}>
-        {isInCart ? 'Уже добавлено' : 'Добавить'}
+        {isInCart ? 'Already added' : 'Add'}
       </Button>
     </div>
   );

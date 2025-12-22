@@ -10,11 +10,11 @@ export const ServicesList = () => {
   const { data: services, isLoading } = useServices();
 
   if (isLoading) {
-    return <div className={s.loading}>Загрузка...</div>;
+    return <div className={s.loading}>Loading...</div>;
   }
 
   if (!services || services.length === 0) {
-    return <div className={s.empty}>Услуги не найдены</div>;
+    return <div className={s.empty}>Services not found</div>;
   }
 
   return (

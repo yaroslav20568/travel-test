@@ -1,12 +1,21 @@
 @use '../../../../shared/styles/variables' as *;
+@use '../../../../shared/styles/mixins' as *;
 
 .empty {
   text-align: center;
 
   .emptyTitle {
-    font-size: 18px;
+    font-size: 16px;
     color: $gray-medium;
     margin: 0;
+
+    @include respond-to(tablet) {
+      font-size: 17px;
+    }
+
+    @include respond-to(desktop) {
+      font-size: 18px;
+    }
   }
 }
 

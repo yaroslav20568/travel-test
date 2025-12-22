@@ -1,17 +1,33 @@
 @use '../../../shared/styles/variables' as *;
+@use '../../../shared/styles/mixins' as *;
 
 .cart {
-  width: 400px;
-  max-height: calc(100vh - 50px);
-  position: sticky;
-  top: 25px;
+  width: 100%;
+  max-height: none;
+  position: static;
   display: flex;
   flex-direction: column;
   align-self: flex-start;
-  gap: 24px;
-  padding: 24px;
+  gap: 16px;
+  padding: 16px;
   border: 1px solid $gray-light;
   border-radius: 8px;
   background-color: $white;
   overflow-y: auto;
+
+  @include respond-to(tablet) {
+    width: 400px;
+    max-height: calc(100vh - 40px);
+    position: sticky;
+    top: 20px;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  @include respond-to(desktop) {
+    max-height: calc(100vh - 50px);
+    top: 25px;
+    gap: 24px;
+    padding: 24px;
+  }
 }

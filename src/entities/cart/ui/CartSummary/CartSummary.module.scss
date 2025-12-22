@@ -1,25 +1,52 @@
 @use '../../../../shared/styles/variables' as *;
+@use '../../../../shared/styles/mixins' as *;
 
 .total {
   .totalContent {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    padding: 16px;
+    gap: 12px;
+    padding: 12px;
     background-color: $gray-lighter;
     border-radius: 6px;
 
+    @include respond-to(tablet) {
+      gap: 16px;
+      padding: 14px;
+    }
+
+    @include respond-to(desktop) {
+      gap: 20px;
+      padding: 16px;
+    }
+
     .totalLabel {
-      font-size: 20px;
+      font-size: 16px;
       font-weight: 700;
       color: $black;
+
+      @include respond-to(tablet) {
+        font-size: 18px;
+      }
+
+      @include respond-to(desktop) {
+        font-size: 20px;
+      }
     }
 
     .totalPrice {
-      font-size: 24px;
+      font-size: 18px;
       font-weight: 700;
       color: $blue;
+
+      @include respond-to(tablet) {
+        font-size: 20px;
+      }
+
+      @include respond-to(desktop) {
+        font-size: 24px;
+      }
     }
   }
 }

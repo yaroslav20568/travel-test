@@ -3,7 +3,15 @@
 .items {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
   overflow-y: auto;
   @include customScrollbar;
+
+  @include respond-to(tablet) {
+    gap: 14px;
+  }
+
+  @include respond-to(desktop) {
+    gap: 16px;
+  }
 }

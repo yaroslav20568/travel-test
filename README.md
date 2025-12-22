@@ -36,6 +36,7 @@ src/
 ## Функциональность
 
 - Просмотр списка доступных туристических услуг
+- Infinite scroll для подгрузки услуг
 - Добавление услуг в корзину
 - Управление количеством услуг в корзине
 - Удаление услуг из корзины
@@ -145,6 +146,7 @@ src/
 ## Features
 
 - Browse available travel services
+- Infinite scroll for loading services
 - Add services to cart
 - Manage service quantities in cart
 - Remove services from cart

@@ -1,9 +1,6 @@
 @use '../../../../shared/styles/variables' as *;
 
 .total {
-  padding-top: 16px;
-  border-top: 2px solid $gray-light;
-
   .totalContent {
     display: flex;
     justify-content: space-between;

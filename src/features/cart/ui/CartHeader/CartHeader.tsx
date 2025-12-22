@@ -8,11 +8,11 @@ import { Button } from '@/shared';
 
 import s from './CartHeader.module.scss';
 
-interface ICartHeaderProps {
+interface IProps {
   onClose?: () => void;
 }
 
-export const CartHeader: FC<ICartHeaderProps> = ({ onClose }) => {
+export const CartHeader: FC<IProps> = ({ onClose }) => {
   const clearCart = useCartStore(state => state.clearCart);
 
   return (

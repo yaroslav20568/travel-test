@@ -1,23 +1,25 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+
+import { useCartStore } from '@/features/cart';
 
 import { useIsMobile } from '@/shared';
 
 export const useCartMobileState = (itemsCount: number) => {
   const isMobile = useIsMobile();
-  const [isOpen, setIsOpen] = useState(false);
+  const isOpen = useCartStore(state => state.isOpen);
+  const setIsOpen = useCartStore(state => state.setIsOpen);
 
   useEffect(() => {
     if (isMobile && itemsCount > 0) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsOpen(true);
     } else if (isMobile && itemsCount === 0) {
       setIsOpen(false);
     } else if (!isMobile) {
       setIsOpen(false);
     }
-  }, [isMobile, itemsCount]);
+  }, [isMobile, itemsCount, setIsOpen]);
 
   return { isOpen, setIsOpen, isMobile };
 };

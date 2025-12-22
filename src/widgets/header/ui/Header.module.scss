@@ -1,0 +1,39 @@
+@use '../../../shared/styles/variables' as *;
+@use '../../../shared/styles/mixins' as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid $gray-light;
+  background-color: $white;
+
+  @include respond-to(tablet) {
+    padding: 20px 24px;
+  }
+
+  @include respond-to(desktop) {
+    padding: 24px 32px;
+  }
+
+  .title {
+    font-size: 18px;
+    font-weight: 600;
+    color: $gray-dark;
+
+    @include respond-to(tablet) {
+      font-size: 20px;
+    }
+
+    @include respond-to(desktop) {
+      font-size: 24px;
+    }
+  }
+}
+
+.cartButton {
+  @media (min-width: 768px) {
+    display: none;
+  }
+}

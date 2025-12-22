@@ -15,7 +15,9 @@ class ServiceApi {
     const startIndex = (page - 1) * limit;
     const endIndex = startIndex + limit;
 
-    return Promise.resolve(mockServices.slice(startIndex, endIndex));
+    await new Promise(resolve => setTimeout(resolve, 300));
+
+    return mockServices.slice(startIndex, endIndex);
   }
 }
 

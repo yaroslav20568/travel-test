@@ -1,21 +1,32 @@
 'use client';
 
+import { QueryFunctionContext } from '@tanstack/react-query';
+
 import { Cart, Header, ServicesList } from '@/widgets';
 
-import { useServices } from '@/entities/service';
+import { IService, serviceApi } from '@/entities/service';
 
 import { nameApp } from '@/shared';
+import { useInfiniteScroll } from '@/shared/hooks';
 
 import s from './ServicesPage.module.scss';
 
 export const ServicesPage = () => {
-  const { isLoading } = useServices();
+  const { isLoading } = useInfiniteScroll<IService>({
+    queryKey: ['services', 'infinite'],
+    queryFn: (context: QueryFunctionContext<readonly unknown[], number>) =>
+      serviceApi.getServices({
+        limit: 20,
+        page: context.pageParam ?? 1
+      }),
+    limit: 20
+  });
   const title = `Services ${nameApp}`;
 
   return (
     <>
       <Header title={title} />
-      <div className={s.servicesPage}>
+      <div className={s.contentWrapper}>
         <ServicesList />
         {!isLoading && <Cart />}
       </div>

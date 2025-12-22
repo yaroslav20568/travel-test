@@ -1,24 +1,82 @@
 @use '../../../shared/styles/variables' as *;
 @use '../../../shared/styles/mixins' as *;
 
-.list {
+.container {
   width: 100%;
-  height: max-content;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
+  display: flex;
+  flex-direction: column;
 
-  @include respond-to(tablet) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+  .list {
+    width: 100%;
+    height: max-content;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+
+    @include respond-to(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    @include respond-to(desktop) {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
-  @include respond-to(desktop) {
-    grid-template-columns: repeat(3, 1fr);
+  .loadMore {
+    width: 100%;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    position: relative;
+
+    @include respond-to(tablet) {
+      padding: 20px;
+    }
+
+    @include respond-to(desktop) {
+      padding: 24px;
+    }
+
+    .loadingMore {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      padding: 8px 16px;
+      text-align: center;
+      font-size: 14px;
+      color: $gray-medium;
+      white-space: nowrap;
+
+      @include respond-to(tablet) {
+        font-size: 16px;
+        padding: 10px 20px;
+      }
+    }
   }
 }
 
-.loading,
+.loading {
+  width: 100%;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+
+  @include respond-to(tablet) {
+    padding: 20px;
+  }
+
+  @include respond-to(desktop) {
+    padding: 24px;
+  }
+}
+
 .empty {
   padding: 16px;
   text-align: center;

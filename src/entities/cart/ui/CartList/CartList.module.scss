@@ -1,7 +1,9 @@
+@use '../../../../shared/styles/mixins' as *;
+
 .items {
   display: flex;
   flex-direction: column;
   gap: 16px;
   overflow-y: auto;
+  @include customScrollbar;
 }
-

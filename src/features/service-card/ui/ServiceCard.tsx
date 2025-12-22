@@ -26,9 +26,11 @@ export const ServiceCard: FC<IProps> = memo(({ service }) => {
         <h3 className={s.title}>{service.title}</h3>
         <p className={s.price}>{service.price} ₽</p>
       </div>
-      <Button onClick={() => addItem(service)} disabled={isInCart}>
+      <Button onClick={() => addItem(service)} disabled={isInCart} size="big">
         {isInCart ? 'Already added' : 'Add'}
       </Button>
     </div>
   );
 });
+
+ServiceCard.displayName = 'ServiceCard';

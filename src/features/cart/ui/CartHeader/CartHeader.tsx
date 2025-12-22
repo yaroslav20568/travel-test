@@ -14,9 +14,7 @@ export const CartHeader: FC = () => {
   return (
     <div className={s.header}>
       <h2 className={s.title}>Cart</h2>
-      <Button onClick={clearCart} className={s.clearButton}>
-        Clear
-      </Button>
+      <Button onClick={clearCart}>Clear</Button>
     </div>
   );
 };

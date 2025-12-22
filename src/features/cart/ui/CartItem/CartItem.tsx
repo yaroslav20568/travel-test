@@ -21,9 +21,9 @@ export const CartItem: FC<ICartItemProps> = memo(({ id, title, price }) => {
         <h3 className={s.itemTitle}>{title}</h3>
         <p className={s.itemPrice}>{price} ₽</p>
       </div>
-      <Button onClick={() => removeItem(id)} className={s.removeButton}>
-        Remove
-      </Button>
+      <Button onClick={() => removeItem(id)}>Remove</Button>
     </div>
   );
 });
+
+CartItem.displayName = 'CartItem';

@@ -6,6 +6,8 @@
 
 Приложение позволяет пользователям просматривать доступные туристические услуги, добавлять их в корзину и управлять выбранными услугами. Интерфейс адаптирован для работы на десктопе и мобильных устройствах.
 
+## Приложение доступно по адресу [https://travel-test-ivory.vercel.app/](https://travel-test-ivory.vercel.app/)
+
 ## Технологический стек
 
 - **Next.js 16.1.0** - React фреймворк с App Router
@@ -60,8 +62,6 @@ npm install
 npm run dev
 ```
 
-Приложение будет доступно по адресу [https://travel-test-ivory.vercel.app/](https://travel-test-ivory.vercel.app/)
-
 ### Сборка для production
 
 ```bash
@@ -114,6 +114,8 @@ Web application for selecting and booking travel services with shopping cart fun
 ## Description
 
 The application allows users to browse available travel services, add them to the cart, and manage selected services. The interface is adapted for desktop and mobile devices.
+
+## Application is available at [https://travel-test-ivory.vercel.app/](https://travel-test-ivory.vercel.app/)
 
 ## Tech Stack
 
@@ -168,8 +170,6 @@ npm install
 ```bash
 npm run dev
 ```
-
-The application will be available at [https://travel-test-ivory.vercel.app/](https://travel-test-ivory.vercel.app/)
 
 ### Build for Production
 

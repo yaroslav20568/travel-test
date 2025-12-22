@@ -6,7 +6,7 @@ import { Cart, Header, ServicesList } from '@/widgets';
 
 import { IService, serviceApi } from '@/entities/service';
 
-import { nameApp } from '@/shared';
+import { Line, nameApp } from '@/shared';
 import { useInfiniteScroll } from '@/shared/hooks';
 
 import s from './ServicesPage.module.scss';
@@ -18,14 +18,13 @@ export const ServicesPage = () => {
       serviceApi.getServices({
         limit: 20,
         page: context.pageParam ?? 1
-      }),
-    limit: 20
+      })
   });
-  const title = `Services ${nameApp}`;
 
   return (
     <>
-      <Header title={title} />
+      <Header title={`Services ${nameApp}`} />
+      <Line />
       <div className={s.contentWrapper}>
         <ServicesList />
         {!isLoading && <Cart />}

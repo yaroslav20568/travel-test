@@ -52,7 +52,7 @@
 
   @include respond-to(tablet) {
     width: 400px;
-    max-height: calc(100vh - 40px);
+    max-height: calc(100vh - 120px);
     position: sticky;
     top: 20px;
     gap: 20px;
@@ -60,7 +60,7 @@
   }
 
   @include respond-to(desktop) {
-    max-height: calc(100vh - 50px);
+    max-height: calc(100vh - 140px);
     top: 25px;
     gap: 24px;
     padding: 24px;

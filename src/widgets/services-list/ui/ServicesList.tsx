@@ -23,8 +23,7 @@ export const ServicesList = () => {
           ...queryParams,
           limit: 20,
           page: context.pageParam ?? 1
-        }),
-      limit: 20
+        })
     });
 
   const handleIntersection = useCallback(

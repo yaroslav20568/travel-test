@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google';
 
 import { nameApp } from '@/shared';
 
+import { QueryProvider } from './providers';
+
 import '@/shared/styles';
 
 const interSans = Inter({
@@ -22,7 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={interSans.variable}>{children}</body>
+      <body className={interSans.variable}>
+        <QueryProvider>{children}</QueryProvider>
+      </body>
     </html>
   );
 }

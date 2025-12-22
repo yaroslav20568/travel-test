@@ -1,0 +1,62 @@
+@use '../../../shared/styles/variables' as *;
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    border: 1px solid $gray-light;
+    border-radius: 8px;
+    background-color: $white;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      .title {
+        font-size: 16px;
+        font-weight: 600;
+        color: $gray-dark;
+      }
+
+      .price {
+        font-size: 18px;
+        font-weight: 700;
+        color: $black;
+      }
+    }
+
+    .button {
+      padding: 12px 24px;
+      background-color: $blue;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      color: $white;
+
+      &:hover {
+        background-color: $blue-dark;
+      }
+
+      &:active {
+        background-color: $blue-darker;
+      }
+    }
+  }
+}
+
+.loading,
+.empty {
+  padding: 24px;
+  text-align: center;
+  font-size: 16px;
+  color: $gray-medium;
+}

@@ -7,8 +7,7 @@ import { ServiceCard } from '@/features/service-card';
 
 import { IGetServicesParams, IService, serviceApi } from '@/entities/service';
 
-import { useInfiniteScroll, useIntersectionObserver } from '@/shared/hooks';
-import { Loader } from '@/shared/ui';
+import { Loader, useInfiniteScroll, useIntersectionObserver } from '@/shared';
 
 import s from './ServicesList.module.scss';
 

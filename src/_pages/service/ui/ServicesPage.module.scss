@@ -1,6 +1,19 @@
+@use '../../../shared/styles/mixins' as *;
+
 .servicesPage {
   display: flex;
-  justify-content: space-between;
-  gap: 30px;
-  padding: 25px;
+  flex-direction: column;
+  gap: 20px;
+  padding: 16px;
+
+  @include respond-to(tablet) {
+    flex-direction: row;
+    gap: 24px;
+    padding: 20px;
+  }
+
+  @include respond-to(desktop) {
+    gap: 30px;
+    padding: 25px;
+  }
 }

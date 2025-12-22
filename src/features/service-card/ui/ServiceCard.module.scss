@@ -1,29 +1,65 @@
 @use '../../../shared/styles/variables' as *;
+@use '../../../shared/styles/mixins' as *;
 
 .item {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding: 16px;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px;
   border: 1px solid $gray-light;
   border-radius: 8px;
   background-color: $white;
 
+  @include respond-to(tablet) {
+    gap: 11px;
+    padding: 14px;
+  }
+
+  @include respond-to(desktop) {
+    gap: 12px;
+    padding: 16px;
+  }
+
   .content {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
+
+    @include respond-to(tablet) {
+      gap: 7px;
+    }
+
+    @include respond-to(desktop) {
+      gap: 8px;
+    }
 
     .title {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 700;
       color: $black;
+
+      @include respond-to(tablet) {
+        font-size: 17px;
+      }
+
+      @include respond-to(desktop) {
+        font-size: 18px;
+      }
     }
 
     .price {
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 600;
       color: $gray-dark;
+
+      @include respond-to(tablet) {
+        font-size: 15px;
+      }
+
+      @include respond-to(desktop) {
+        font-size: 16px;
+      }
     }
   }
 }

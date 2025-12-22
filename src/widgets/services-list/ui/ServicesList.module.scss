@@ -1,17 +1,36 @@
 @use '../../../shared/styles/variables' as *;
+@use '../../../shared/styles/mixins' as *;
 
 .list {
   width: 100%;
   height: max-content;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  grid-template-columns: 1fr;
+  gap: 12px;
+
+  @include respond-to(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  @include respond-to(desktop) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .loading,
 .empty {
-  padding: 24px;
+  padding: 16px;
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
   color: $gray-medium;
+
+  @include respond-to(tablet) {
+    padding: 20px;
+    font-size: 16px;
+  }
+
+  @include respond-to(desktop) {
+    padding: 24px;
+  }
 }

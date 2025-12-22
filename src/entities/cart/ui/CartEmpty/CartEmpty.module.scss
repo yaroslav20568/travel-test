@@ -1,0 +1,12 @@
+@use '../../../../shared/styles/variables' as *;
+
+.empty {
+  text-align: center;
+
+  .emptyTitle {
+    font-size: 18px;
+    color: $gray-medium;
+    margin: 0;
+  }
+}
+

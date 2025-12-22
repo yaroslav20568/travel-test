@@ -23,5 +23,15 @@
     &:active {
       background-color: $blue-darker;
     }
+
+    &:disabled {
+      background-color: $gray-light;
+      color: $gray-dark;
+      cursor: not-allowed;
+
+      &:hover {
+        background-color: $gray-light;
+      }
+    }
   }
 }

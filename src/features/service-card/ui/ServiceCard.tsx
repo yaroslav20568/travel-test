@@ -16,6 +16,8 @@ interface IProps {
 
 export const ServiceCard: FC<IProps> = ({ service }) => {
   const addItem = useCartStore(state => state.addItem);
+  const items = useCartStore(state => state.items);
+  const isInCart = items.some(item => item.id === service.id);
 
   return (
     <div className={s.item}>
@@ -23,7 +25,9 @@ export const ServiceCard: FC<IProps> = ({ service }) => {
         <h3 className={s.title}>{service.title}</h3>
         <p className={s.price}>{service.price} ₽</p>
       </div>
-      <Button onClick={() => addItem(service)}>Добавить</Button>
+      <Button onClick={() => addItem(service)} disabled={isInCart}>
+        {isInCart ? 'Уже добавлено' : 'Добавить'}
+      </Button>
     </div>
   );
 };

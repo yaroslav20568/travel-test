@@ -4,6 +4,8 @@ import { FC } from 'react';
 
 import { useCartStore } from '@/features/cart/model';
 
+import { formatPrice } from '@/entities/service/utils';
+
 import s from './CartSummary.module.scss';
 
 export const CartSummary: FC = () => {
@@ -15,7 +17,7 @@ export const CartSummary: FC = () => {
     <div className={s.total}>
       <div className={s.totalContent}>
         <span className={s.totalLabel}>Total:</span>
-        <span className={s.totalPrice}>{totalPrice} ₽</span>
+        <span className={s.totalPrice}>{formatPrice(totalPrice)} ₽</span>
       </div>
     </div>
   );

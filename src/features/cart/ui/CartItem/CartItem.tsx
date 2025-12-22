@@ -5,6 +5,7 @@ import { FC, memo } from 'react';
 import { useCartStore } from '@/features/cart/model';
 
 import { IService } from '@/entities/service/model';
+import { formatPrice } from '@/entities/service/utils';
 
 import { Button } from '@/shared';
 
@@ -19,7 +20,7 @@ export const CartItem: FC<ICartItemProps> = memo(({ id, title, price }) => {
     <div className={s.item}>
       <div className={s.itemContent}>
         <h3 className={s.itemTitle}>{title}</h3>
-        <p className={s.itemPrice}>{price} ₽</p>
+        <p className={s.itemPrice}>{formatPrice(price)} ₽</p>
       </div>
       <Button onClick={() => removeItem(id)}>Remove</Button>
     </div>

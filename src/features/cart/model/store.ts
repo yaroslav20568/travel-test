@@ -5,16 +5,19 @@ import { IService } from '@/entities/service/model';
 
 interface ICartStore {
   items: Array<IService>;
+  isOpen: boolean;
   addItem: (service: IService) => void;
   removeItem: (serviceId: IService['id']) => void;
   clearCart: () => void;
   getTotalPrice: () => number;
+  setIsOpen: (isOpen: boolean) => void;
 }
 
 export const useCartStore = create<ICartStore>()(
   devtools(
     (set, get) => ({
       items: [],
+      isOpen: false,
       addItem: service => {
         const existingItem = get().items.find(item => item.id === service.id);
 
@@ -42,6 +45,9 @@ export const useCartStore = create<ICartStore>()(
       },
       getTotalPrice: () => {
         return get().items.reduce((total, item) => total + item.price, 0);
+      },
+      setIsOpen: isOpen => {
+        set({ isOpen }, false, 'cart/setIsOpen');
       }
     }),
     { name: 'CartStore' }

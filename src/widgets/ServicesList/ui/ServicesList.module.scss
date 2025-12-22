@@ -1,8 +1,8 @@
 @use '../../../shared/styles/variables' as *;
 
 .list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 
   .item {
@@ -29,25 +29,6 @@
         font-size: 18px;
         font-weight: 700;
         color: $black;
-      }
-    }
-
-    .button {
-      padding: 12px 24px;
-      background-color: $blue;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.2s;
-
-      color: $white;
-
-      &:hover {
-        background-color: $blue-dark;
-      }
-
-      &:active {
-        background-color: $blue-darker;
       }
     }
   }

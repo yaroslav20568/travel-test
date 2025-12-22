@@ -1,0 +1,27 @@
+@use '../../styles/variables' as *;
+
+.button {
+  width: fit-content;
+  padding: 12px 24px;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+
+  &.primary {
+    color: $white;
+    background-color: $blue;
+
+    &:hover {
+      background-color: $blue-dark;
+    }
+
+    &:active {
+      background-color: $blue-darker;
+    }
+  }
+}

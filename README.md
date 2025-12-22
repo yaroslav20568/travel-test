@@ -1,36 +1,215 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Travel Test
 
-## Getting Started
+Веб-приложение для выбора и бронирования туристических услуг с функциональностью корзины покупок.
 
-First, run the development server:
+## Описание
+
+Приложение позволяет пользователям просматривать доступные туристические услуги, добавлять их в корзину и управлять выбранными услугами. Интерфейс адаптирован для работы на десктопе и мобильных устройствах.
+
+## Технологический стек
+
+- **Next.js 16.1.0** - React фреймворк с App Router
+- **React 19.2.3** - библиотека для создания пользовательских интерфейсов
+- **TypeScript** - типизированный JavaScript
+- **SCSS** - препроцессор CSS для стилизации
+- **Zustand** - легковесная библиотека для управления состоянием
+- **TanStack Query (React Query)** - библиотека для работы с серверным состоянием и кэшированием
+- **ESLint** - линтер для проверки качества кода
+- **Prettier** - форматировщик кода
+
+## Архитектура проекта
+
+Проект организован по методологии **Feature-Sliced Design (FSD)**:
+
+```
+src/
+├── app/              # Next.js App Router конфигурация
+├── _pages/           # Страницы приложения
+├── widgets/          # Композитные UI-блоки
+├── features/         # Функциональные возможности
+├── entities/         # Бизнес-сущности (сервисы, корзина)
+├── shared/           # Переиспользуемые компоненты и утилиты
+```
+
+## Функциональность
+
+- Просмотр списка доступных туристических услуг
+- Добавление услуг в корзину
+- Управление количеством услуг в корзине
+- Удаление услуг из корзины
+- Подсчет общей стоимости выбранных услуг
+- Адаптивный дизайн для мобильных устройств
+- Мобильная корзина с выдвижной панелью (drawer)
+
+## Установка и запуск
+
+### Требования
+
+- Node.js 18+
+- npm, yarn, pnpm или bun
+
+### Установка зависимостей
+
+```bash
+npm install
+```
+
+### Запуск в режиме разработки
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Приложение будет доступно по адресу [https://travel-test-ivory.vercel.app/](https://travel-test-ivory.vercel.app/)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Сборка для production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+### Запуск production сборки
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Доступные скрипты
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `npm run dev` - запуск dev-сервера
+- `npm run build` - сборка production версии
+- `npm start` - запуск production версии
+- `npm run lint` - проверка кода линтером
+- `npm run lint:fix` - автоматическое исправление ошибок линтера
+- `npm run format` - форматирование кода с помощью Prettier
+- `npm run format:check` - проверка форматирования кода
 
-## Deploy on Vercel
+## Особенности реализации
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Использование React Query для управления состоянием загрузки данных
+- Zustand store для управления состоянием корзины
+- Модульные SCSS стили для каждого компонента
+- Адаптивный дизайн с поддержкой мобильных устройств
+- Блокировка прокрутки body при открытой мобильной корзине
+- TypeScript для типобезопасности
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Разработка
+
+Проект следует принципам:
+
+- **SOLID** - принципы объектно-ориентированного программирования
+- **KISS** - простота и понятность кода
+- **Feature-Sliced Design** - архитектура
+
+## Лицензия
+
+Проект создан в образовательных целях.
+
+---
+
+# Travel Test
+
+Web application for selecting and booking travel services with shopping cart functionality.
+
+## Description
+
+The application allows users to browse available travel services, add them to the cart, and manage selected services. The interface is adapted for desktop and mobile devices.
+
+## Tech Stack
+
+- **Next.js 16.1.0** - React framework with App Router
+- **React 19.2.3** - library for building user interfaces
+- **TypeScript** - typed JavaScript
+- **SCSS** - CSS preprocessor for styling
+- **Zustand** - lightweight state management library
+- **TanStack Query (React Query)** - library for server state management and caching
+- **ESLint** - linter for code quality checks
+- **Prettier** - code formatter
+
+## Project Architecture
+
+The project is organized using **Feature-Sliced Design (FSD)** methodology:
+
+```
+src/
+├── app/              # Next.js App Router configuration
+├── _pages/           # Application pages
+├── widgets/          # Composite UI blocks
+├── features/         # Functional features
+├── entities/         # Business entities (services, cart)
+├── shared/           # Reusable components and utilities
+```
+
+## Features
+
+- Browse available travel services
+- Add services to cart
+- Manage service quantities in cart
+- Remove services from cart
+- Calculate total cost of selected services
+- Responsive design for mobile devices
+- Mobile cart with drawer panel
+
+## Installation and Running
+
+### Requirements
+
+- Node.js 18+
+- npm, yarn, pnpm or bun
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Run Development Server
+
+```bash
+npm run dev
+```
+
+The application will be available at [https://travel-test-ivory.vercel.app/](https://travel-test-ivory.vercel.app/)
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+### Run Production Build
+
+```bash
+npm start
+```
+
+## Available Scripts
+
+- `npm run dev` - start dev server
+- `npm run build` - build production version
+- `npm start` - run production version
+- `npm run lint` - check code with linter
+- `npm run lint:fix` - automatically fix linter errors
+- `npm run format` - format code with Prettier
+- `npm run format:check` - check code formatting
+
+## Implementation Details
+
+- React Query for managing data loading state
+- Zustand store for cart state management
+- Modular SCSS styles for each component
+- Responsive design with mobile device support
+- Body scroll lock when mobile cart is open
+- TypeScript for type safety
+
+## Development
+
+The project follows these principles:
+
+- **SOLID** - object-oriented programming principles
+- **KISS** - code simplicity and clarity
+- **Feature-Sliced Design** - architecture
+
+## License
+
+This project is created for educational purposes.

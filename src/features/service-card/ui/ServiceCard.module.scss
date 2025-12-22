@@ -1,0 +1,29 @@
+@use '../../../shared/styles/variables' as *;
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid $gray-light;
+  border-radius: 8px;
+  background-color: $white;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .title {
+      font-size: 18px;
+      font-weight: 700;
+      color: $black;
+    }
+
+    .price {
+      font-size: 16px;
+      font-weight: 600;
+      color: $gray-dark;
+    }
+  }
+}

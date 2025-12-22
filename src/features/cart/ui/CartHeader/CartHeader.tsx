@@ -4,7 +4,7 @@ import { FC } from 'react';
 
 import { useCartStore } from '@/features/cart';
 
-import { Button } from '@/shared';
+import { Button, IconClose } from '@/shared';
 
 import s from './CartHeader.module.scss';
 
@@ -14,6 +14,7 @@ interface IProps {
 
 export const CartHeader: FC<IProps> = ({ onClose }) => {
   const clearCart = useCartStore(state => state.clearCart);
+  const items = useCartStore(state => state.items);
 
   return (
     <div className={s.header}>
@@ -21,10 +22,10 @@ export const CartHeader: FC<IProps> = ({ onClose }) => {
       <div className={s.actions}>
         {onClose && (
           <Button onClick={onClose} className={s.closeButton}>
-            ×
+            <IconClose />
           </Button>
         )}
-        <Button onClick={clearCart}>Clear</Button>
+        {items.length > 0 && <Button onClick={clearCart}>Clear</Button>}
       </div>
     </div>
   );

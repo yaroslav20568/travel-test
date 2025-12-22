@@ -1,6 +1,6 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import { useCartStore } from '@/features/cart';
 
@@ -14,10 +14,11 @@ interface IProps {
   service: IService;
 }
 
-export const ServiceCard: FC<IProps> = ({ service }) => {
+export const ServiceCard: FC<IProps> = memo(({ service }) => {
   const addItem = useCartStore(state => state.addItem);
-  const items = useCartStore(state => state.items);
-  const isInCart = items.some(item => item.id === service.id);
+  const isInCart = useCartStore(state =>
+    state.items.some(item => item.id === service.id)
+  );
 
   return (
     <div className={s.item}>
@@ -30,4 +31,4 @@ export const ServiceCard: FC<IProps> = ({ service }) => {
       </Button>
     </div>
   );
-};
+});

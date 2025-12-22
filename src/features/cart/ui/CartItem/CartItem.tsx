@@ -1,6 +1,6 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, memo } from 'react';
 
 import { useCartStore } from '@/features/cart/model';
 
@@ -12,7 +12,7 @@ import s from './CartItem.module.scss';
 
 interface ICartItemProps extends IService {}
 
-export const CartItem: FC<ICartItemProps> = ({ id, title, price }) => {
+export const CartItem: FC<ICartItemProps> = memo(({ id, title, price }) => {
   const removeItem = useCartStore(state => state.removeItem);
 
   return (
@@ -26,4 +26,4 @@ export const CartItem: FC<ICartItemProps> = ({ id, title, price }) => {
       </Button>
     </div>
   );
-};
+});

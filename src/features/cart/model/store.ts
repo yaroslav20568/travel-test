@@ -6,7 +6,7 @@ import { IService } from '@/entities/service/model';
 interface ICartStore {
   items: Array<IService>;
   addItem: (service: IService) => void;
-  removeItem: (serviceId: number) => void;
+  removeItem: (serviceId: IService['id']) => void;
   clearCart: () => void;
   getTotalPrice: () => number;
 }

@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
-import { IService } from '@/entities/service/model';
+import { IService } from '@/entities';
 
 interface ICartStore {
   items: Array<IService>;

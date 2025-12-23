@@ -1,5 +1,4 @@
-import { mockServices } from '@/entities/service/mock';
-import { IService } from '@/entities/service/model';
+import { IService, mockServices } from '@/entities';
 
 export interface IGetServicesParams {
   limit?: number;

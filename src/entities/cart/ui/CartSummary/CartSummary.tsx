@@ -2,9 +2,9 @@
 
 import { FC } from 'react';
 
-import { useCartStore } from '@/features/cart/model';
+import { useCartStore } from '@/features';
 
-import { formatPrice } from '@/entities/service/utils';
+import { formatPrice } from '@/entities';
 
 import { Button } from '@/shared';
 

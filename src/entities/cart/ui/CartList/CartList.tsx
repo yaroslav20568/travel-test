@@ -2,8 +2,7 @@
 
 import { FC } from 'react';
 
-import { CartItem } from '@/features/cart';
-import { useCartStore } from '@/features/cart/model';
+import { CartItem, useCartStore } from '@/features';
 
 import s from './CartList.module.scss';
 

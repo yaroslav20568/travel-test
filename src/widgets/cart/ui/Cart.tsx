@@ -4,9 +4,9 @@ import { FC } from 'react';
 
 import { useCartMobileState } from '@/widgets';
 
-import { CartHeader, useCartStore } from '@/features';
+import { CartHeader, CartList, CartSummary, useCartStore } from '@/features';
 
-import { CartEmpty, CartList, CartSummary } from '@/entities';
+import { CartEmpty } from '@/entities';
 
 import { Line, useBodyScrollLock } from '@/shared';
 

@@ -23,7 +23,8 @@ export const ServicesList = () => {
           ...queryParams,
           limit: 20,
           page: context.pageParam ?? 1
-        })
+        }),
+      limit: 20
     });
 
   const handleIntersection = useCallback(
@@ -66,7 +67,7 @@ export const ServicesList = () => {
         ))}
       </div>
       <div ref={loadMoreRef} className={s.loadMore}>
-        {isFetchingNextPage && (
+        {hasNextPage && isFetchingNextPage && (
           <div className={s.loadingMore}>
             <Loader />
           </div>

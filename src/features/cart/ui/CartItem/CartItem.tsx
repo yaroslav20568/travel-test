@@ -10,9 +10,9 @@ import { Button } from '@/shared';
 
 import s from './CartItem.module.scss';
 
-interface ICartItemProps extends IService {}
+interface IProps extends IService {}
 
-export const CartItem: FC<ICartItemProps> = memo(({ id, title, price }) => {
+export const CartItem: FC<IProps> = memo(({ id, title, price }) => {
   const removeItem = useCartStore(state => state.removeItem);
 
   return (

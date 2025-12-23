@@ -5,7 +5,7 @@ import { nameApp } from '@/shared';
 
 import { QueryProvider } from './providers';
 
-import '@/shared/styles';
+import '@/app/styles';
 
 const interSans = Inter({
   variable: '--font-inter',

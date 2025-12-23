@@ -2,11 +2,11 @@
 
 import { FC } from 'react';
 
-import { useCartMobileState } from '@/widgets/cart/hooks';
+import { useCartMobileState } from '@/widgets';
 
-import { CartHeader, useCartStore } from '@/features/cart';
+import { CartHeader, useCartStore } from '@/features';
 
-import { CartEmpty, CartList, CartSummary } from '@/entities/cart/ui';
+import { CartEmpty, CartList, CartSummary } from '@/entities';
 
 import { Line, useBodyScrollLock } from '@/shared';
 

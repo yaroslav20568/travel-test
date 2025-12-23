@@ -1,4 +1,4 @@
-import { IService } from '@/entities/service/model';
+import { IService } from '@/entities';
 
 export const mockServices: Array<IService> = [
   { id: 1, title: 'Historical Center Tour', price: 2500 },

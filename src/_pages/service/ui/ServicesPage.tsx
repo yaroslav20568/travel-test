@@ -4,10 +4,9 @@ import { QueryFunctionContext } from '@tanstack/react-query';
 
 import { Cart, Header, ServicesList } from '@/widgets';
 
-import { IService, serviceApi } from '@/entities/service';
+import { IService, serviceApi } from '@/entities';
 
-import { Line, nameApp } from '@/shared';
-import { useInfiniteScroll } from '@/shared/hooks';
+import { Line, nameApp, useInfiniteScroll } from '@/shared';
 
 import s from './ServicesPage.module.scss';
 

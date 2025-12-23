@@ -2,7 +2,7 @@
 
 import { FC } from 'react';
 
-import { useCartStore } from '@/features/cart';
+import { useCartStore } from '@/features';
 
 import { Button, useIsMobile } from '@/shared';
 

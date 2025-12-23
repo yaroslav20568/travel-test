@@ -3,9 +3,9 @@
 import { useCallback } from 'react';
 import { QueryFunctionContext } from '@tanstack/react-query';
 
-import { ServiceCard } from '@/features/service-card';
+import { ServiceCard } from '@/features';
 
-import { IGetServicesParams, IService, serviceApi } from '@/entities/service';
+import { IGetServicesParams, IService, serviceApi } from '@/entities';
 
 import { Loader, useInfiniteScroll, useIntersectionObserver } from '@/shared';
 

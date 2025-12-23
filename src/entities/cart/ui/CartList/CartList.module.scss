@@ -9,6 +9,10 @@
 
   @include respond-to(tablet) {
     gap: 14px;
+
+    @media (max-height: 600px) {
+      overflow-y: visible;
+    }
   }
 
   @include respond-to(desktop) {

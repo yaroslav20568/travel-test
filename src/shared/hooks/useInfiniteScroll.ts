@@ -12,12 +12,14 @@ interface IOptions<TData, TParams> {
     params?: TParams
   ) => Promise<TData[]>;
   params?: TParams;
+  limit?: number;
 }
 
 export const useInfiniteScroll = <TData, TParams = unknown>({
   queryKey,
   queryFn,
-  params
+  params,
+  limit
 }: IOptions<TData, TParams>) => {
   return useInfiniteQuery<
     TData[],
@@ -31,6 +33,9 @@ export const useInfiniteScroll = <TData, TParams = unknown>({
       queryFn(context, params),
     getNextPageParam: (lastPage, allPages) => {
       if (lastPage.length === 0) {
+        return undefined;
+      }
+      if (limit && lastPage.length < limit) {
         return undefined;
       }
       return allPages.length + 1;

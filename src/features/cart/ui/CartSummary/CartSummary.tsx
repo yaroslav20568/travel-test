@@ -1,6 +1,12 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
+import {
+  animate,
+  useMotionValue,
+  useMotionValueEvent,
+  useTransform
+} from 'motion/react';
 
 import { useCartStore } from '@/features';
 
@@ -16,13 +22,27 @@ export const CartSummary: FC = () => {
     state.items.reduce((total, item) => total + item.price, 0)
   );
 
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, value => Math.round(value));
+  const [displayPrice, setDisplayPrice] = useState('0');
+
+  useMotionValueEvent(rounded, 'change', latest => {
+    setDisplayPrice(formatPrice(latest));
+  });
+
+  useEffect(() => {
+    const controls = animate(count, totalPrice, { duration: 0.5 });
+
+    return () => controls.stop();
+  }, [totalPrice]);
+
   const handleCheckout = () => {};
 
   return (
     <div className={s.total}>
       <div className={s.totalContent}>
         <span className={s.totalLabel}>Total:</span>
-        <span className={s.totalPrice}>{formatPrice(totalPrice)} ₽</span>
+        <span className={s.totalPrice}>{displayPrice} ₽</span>
       </div>
       <Button
         onClick={handleCheckout}

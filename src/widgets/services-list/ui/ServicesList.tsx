@@ -2,6 +2,7 @@
 
 import { useCallback } from 'react';
 import { QueryFunctionContext } from '@tanstack/react-query';
+import { AnimatePresence, motion } from 'motion/react';
 
 import { ServiceCard } from '@/features';
 
@@ -62,9 +63,18 @@ export const ServicesList = () => {
   return (
     <div className={s.container}>
       <div className={s.list}>
-        {services.map(service => (
-          <ServiceCard key={service.id} service={service} />
-        ))}
+        <AnimatePresence>
+          {services.map(service => (
+            <motion.div
+              key={service.id}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <ServiceCard key={service.id} service={service} />
+            </motion.div>
+          ))}
+        </AnimatePresence>
       </div>
       <div ref={loadMoreRef} className={s.loadMore}>
         {hasNextPage && isFetchingNextPage && (

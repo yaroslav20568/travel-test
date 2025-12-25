@@ -53,8 +53,6 @@ jobs:
         uses: amondnet/vercel-action@v25
         env:
           SASS_PATH: ${{ secrets.SASS_PATH }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}

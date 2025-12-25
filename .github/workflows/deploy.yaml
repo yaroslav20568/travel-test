@@ -31,6 +31,8 @@ jobs:
 
       - name: Build project
         run: npm run build
+        env:
+          SASS_PATH: ${{ secrets.SASS_PATH }}
 
   deploy:
     name: Deploy to Vercel

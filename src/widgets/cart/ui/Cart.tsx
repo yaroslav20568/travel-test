@@ -1,6 +1,7 @@
 'use client';
 
 import { FC } from 'react';
+import { AnimatePresence, motion } from 'motion/react';
 
 import { useCartMobileState } from '@/widgets';
 
@@ -30,7 +31,30 @@ export const Cart: FC = () => {
     <>
       <CartHeader onClose={isMobile ? handleClose : undefined} />
       <Line />
-      {items.length === 0 ? <CartEmpty /> : <CartList />}
+      <AnimatePresence>
+        {items.length === 0 ? (
+          <motion.div
+            key="cartEmpty"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+          >
+            <CartEmpty />
+          </motion.div>
+        ) : (
+          <motion.div
+            key="cartList"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+            style={{ display: 'contents' }}
+          >
+            <CartList />
+          </motion.div>
+        )}
+      </AnimatePresence>
       <Line />
       <CartSummary />
     </>

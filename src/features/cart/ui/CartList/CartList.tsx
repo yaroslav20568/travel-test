@@ -14,7 +14,7 @@ export const CartList: FC = () => {
     <div className={s.items}>
       <AnimatePresence>
         {items.map(item => (
-          <motion.li
+          <motion.div
             key={item.id}
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -22,7 +22,7 @@ export const CartList: FC = () => {
             transition={{ duration: 0.3 }}
           >
             <CartItem key={item.id} {...item} />
-          </motion.li>
+          </motion.div>
         ))}
       </AnimatePresence>
     </div>

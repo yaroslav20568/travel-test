@@ -1,4 +1,4 @@
-import { renderHook, waitFor } from '@testing-library/react';
+import { act, renderHook } from '@testing-library/react';
 
 import { useIsMobile } from './useIsMobile';
 
@@ -7,17 +7,27 @@ describe('test useBodyScrollLock', () => {
     window.innerWidth = 600;
     const { result } = renderHook(() => useIsMobile());
 
-    await waitFor(() => {
-      expect(result.current).toBeTruthy();
-    });
+    expect(result.current).toBeTruthy();
   });
 
   test('is not mobile', async () => {
     window.innerWidth = 1200;
     const { result } = renderHook(() => useIsMobile());
 
-    await waitFor(() => {
-      expect(result.current).toBeFalsy();
+    expect(result.current).toBeFalsy();
+  });
+
+  test('resize', async () => {
+    window.innerWidth = 1200;
+    const { result } = renderHook(() => useIsMobile());
+
+    expect(result.current).toBeFalsy();
+
+    act(() => {
+      window.innerWidth = 600;
+      window.dispatchEvent(new Event('resize'));
     });
+
+    expect(result.current).toBeTruthy();
   });
 });

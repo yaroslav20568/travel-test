@@ -10,7 +10,7 @@ interface IOptions<TData, TParams> {
   queryFn: (
     context: QueryFunctionContext<QueryKey, number>,
     params?: TParams
-  ) => Promise<TData[]>;
+  ) => Promise<Array<TData>>;
   params?: TParams;
   limit?: number;
 }
@@ -22,9 +22,9 @@ export const useInfiniteScroll = <TData, TParams = unknown>({
   limit
 }: IOptions<TData, TParams>) => {
   return useInfiniteQuery<
-    TData[],
+    Array<TData>,
     Error,
-    InfiniteData<TData[]>,
+    InfiniteData<Array<TData>>,
     QueryKey,
     number
   >({

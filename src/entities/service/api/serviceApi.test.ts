@@ -2,7 +2,7 @@ import { IService } from '@/entities/service/model';
 
 import { serviceApi } from './serviceApi';
 
-const checkServices = (services: Array<IService>) => {
+export const checkServices = (services: Array<IService>) => {
   services.forEach((service): asserts service is IService => {
     expect(service).toMatchObject({
       id: expect.any(Number),

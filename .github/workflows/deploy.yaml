@@ -37,6 +37,12 @@ jobs:
         env:
           SASS_PATH: ${{ secrets.SASS_PATH }}
 
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Run Playwright tests
+        run: npx playwright test
+
   deploy:
     name: Deploy to Vercel
     needs: checks

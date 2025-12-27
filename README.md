@@ -1,5 +1,7 @@
 # Travel Test
 
+> **Тестовое задание**
+
 Веб-приложение для выбора и бронирования туристических услуг с функциональностью корзины покупок.
 
 ## Описание
@@ -16,6 +18,10 @@
 - **SCSS** - препроцессор CSS для стилизации
 - **Zustand** - легковесная библиотека для управления состоянием
 - **TanStack Query (React Query)** - библиотека для работы с серверным состоянием и кэшированием
+- **Motion (Framer Motion)** - библиотека для анимаций
+- **React Compiler** - оптимизация React компонентов
+- **Jest** - фреймворк для unit-тестирования
+- **Playwright** - инструмент для e2e-тестирования
 - **ESLint** - линтер для проверки качества кода
 - **Prettier** - форматировщик кода
 
@@ -80,6 +86,8 @@ npm start
 - `npm run dev` - запуск dev-сервера
 - `npm run build` - сборка production версии
 - `npm start` - запуск production версии
+- `npm test` - запуск unit-тестов (Jest)
+- `npx playwright test` - запуск e2e-тестов (Playwright)
 - `npm run lint` - проверка кода линтером
 - `npm run lint:fix` - автоматическое исправление ошибок линтера
 - `npm run format` - форматирование кода с помощью Prettier
@@ -93,6 +101,10 @@ npm start
 - Адаптивный дизайн с поддержкой мобильных устройств
 - Блокировка прокрутки body при открытой мобильной корзине
 - TypeScript для типобезопасности
+- React Compiler для оптимизации производительности
+- Анимации с помощью Motion (Framer Motion)
+- Unit-тесты с Jest и Testing Library
+- E2E-тесты с Playwright
 
 ## Разработка
 
@@ -110,6 +122,8 @@ npm start
 
 # Travel Test
 
+> **Test Assignment**
+
 Web application for selecting and booking travel services with shopping cart functionality.
 
 ## Description
@@ -126,6 +140,10 @@ The application allows users to browse available travel services, add them to th
 - **SCSS** - CSS preprocessor for styling
 - **Zustand** - lightweight state management library
 - **TanStack Query (React Query)** - library for server state management and caching
+- **Motion (Framer Motion)** - animation library
+- **React Compiler** - React components optimization
+- **Jest** - unit testing framework
+- **Playwright** - e2e testing tool
 - **ESLint** - linter for code quality checks
 - **Prettier** - code formatter
 
@@ -190,6 +208,8 @@ npm start
 - `npm run dev` - start dev server
 - `npm run build` - build production version
 - `npm start` - run production version
+- `npm test` - run unit tests (Jest)
+- `npx playwright test` - run e2e tests (Playwright)
 - `npm run lint` - check code with linter
 - `npm run lint:fix` - automatically fix linter errors
 - `npm run format` - format code with Prettier
@@ -203,6 +223,10 @@ npm start
 - Responsive design with mobile device support
 - Body scroll lock when mobile cart is open
 - TypeScript for type safety
+- React Compiler for performance optimization
+- Animations with Motion (Framer Motion)
+- Unit tests with Jest and Testing Library
+- E2E tests with Playwright
 
 ## Development
 

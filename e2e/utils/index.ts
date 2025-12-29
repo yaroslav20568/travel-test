@@ -1,3 +1,3 @@
 export * from './extractNumFromStr';
-export * from './getServiceCards';
-export * from './getTotalPrice';
+export * from './getItems';
+export * from './getTotalPriceData';

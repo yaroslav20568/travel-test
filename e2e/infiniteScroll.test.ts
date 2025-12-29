@@ -1,17 +1,18 @@
 import { expect, test } from '@playwright/test';
 
-import { getServiceCards } from './utils';
+import { serviceSelector } from './const';
+import { getItems } from './utils';
 
 test('test infinite scroll', async ({ page }) => {
   await page.goto('/');
 
-  let previousCount = await (await getServiceCards(page)).count();
+  let previousCount = await (await getItems(page, serviceSelector)).count();
 
   while (true) {
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
     await page.waitForTimeout(2000);
 
-    const currentCount = await (await getServiceCards(page)).count();
+    const currentCount = await (await getItems(page, serviceSelector)).count();
 
     if (currentCount === previousCount) {
       break;
@@ -20,5 +21,7 @@ test('test infinite scroll', async ({ page }) => {
     previousCount = currentCount;
   }
 
-  expect(await (await getServiceCards(page)).count()).toBeGreaterThan(0);
+  expect(await (await getItems(page, serviceSelector)).count()).toBeGreaterThan(
+    0
+  );
 });

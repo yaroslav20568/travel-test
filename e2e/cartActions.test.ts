@@ -3,10 +3,9 @@ import { expect, test } from '@playwright/test';
 import { cartHeaderSelector, cartItemSelector, serviceSelector } from './const';
 import { getItems, getTotalPriceData } from './utils';
 
-test('test add service and cart actions flow', async ({ page }) => {
+test('test add services to cart', async ({ page }) => {
   await page.goto('/');
 
-  // add //
   const serviceCards = await getItems(page, serviceSelector);
   const serviceCardsCount = await serviceCards.count();
   const serviceCardButtons = serviceCards.locator('[class*="button"]');
@@ -17,12 +16,21 @@ test('test add service and cart actions flow', async ({ page }) => {
     await serviceCardButtons.nth(i).click();
   }
 
-  const [addExpectedTotal, addActualTotal] = await getTotalPriceData(page, 3);
+  const [expectedTotal, actualTotal] = await getTotalPriceData(page, 3);
 
-  expect(addActualTotal).toBe(addExpectedTotal);
-  // add //
+  expect(actualTotal).toBe(expectedTotal);
+});
 
-  // delete //
+test('test delete service from cart', async ({ page }) => {
+  await page.goto('/');
+
+  const serviceCards = await getItems(page, serviceSelector);
+  const serviceCardButtons = serviceCards.locator('[class*="button"]');
+
+  for (let i = 0; i < 3; i++) {
+    await serviceCardButtons.nth(i).click();
+  }
+
   const cartElems = await getItems(page, cartItemSelector);
   const cartElemsCount = await cartElems.count();
   const cartElemLastButton = cartElems.locator('[class*="button"]').last();
@@ -31,21 +39,26 @@ test('test add service and cart actions flow', async ({ page }) => {
 
   await cartElemLastButton.click();
 
-  const [deleteExpectedTotal, deleteActualTotal] = await getTotalPriceData(
-    page,
-    2
-  );
+  const [expectedTotal, actualTotal] = await getTotalPriceData(page, 2);
 
-  expect(deleteActualTotal).toBe(deleteExpectedTotal);
-  // delete //
+  expect(actualTotal).toBe(expectedTotal);
+});
 
-  // delete //
+test('test clear cart', async ({ page }) => {
+  await page.goto('/');
+
+  const serviceCards = await getItems(page, serviceSelector);
+  const serviceCardButtons = serviceCards.locator('[class*="button"]');
+
+  for (let i = 0; i < 3; i++) {
+    await serviceCardButtons.nth(i).click();
+  }
+
   const cartHeader = (await getItems(page, cartHeaderSelector)).first();
   const cartClearButton = cartHeader.locator('[class*="button"]');
   await cartClearButton.click();
 
-  const [, clearActualTotal] = await getTotalPriceData(page, 0);
+  const [, actualTotal] = await getTotalPriceData(page, 0);
 
-  expect(clearActualTotal).toBe(0);
-  // delete //
+  expect(actualTotal).toBe(0);
 });

@@ -25,7 +25,9 @@ describe('test cart store', () => {
   test('get total-price in cart', () => {
     useCartStore.getState().getTotalPrice();
 
-    expect(useCartStore.getState().getTotalPrice()).toBe(6000);
+    expect(useCartStore.getState().getTotalPrice()).toBe(
+      mockServices[0].price + mockServices[1].price
+    );
   });
 
   test('delete item from cart', () => {

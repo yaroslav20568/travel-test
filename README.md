@@ -8,6 +8,13 @@
 
 Приложение позволяет пользователям просматривать доступные туристические услуги, добавлять их в корзину и управлять выбранными услугами. Интерфейс адаптирован для работы на десктопе и мобильных устройствах.
 
+## Демонстрация
+
+<video width="600" controls>
+  <source src="./video/demo.mp4" type="video/mp4">
+  Ваш браузер не поддерживает отображение видео.
+</video>
+
 ## Приложение доступно по адресу [https://travel-test-ivory.vercel.app/](https://travel-test-ivory.vercel.app/)
 
 ## Технологический стек
@@ -129,6 +136,13 @@ Web application for selecting and booking travel services with shopping cart fun
 ## Description
 
 The application allows users to browse available travel services, add them to the cart, and manage selected services. The interface is adapted for desktop and mobile devices.
+
+## Demo
+
+<video width="600" controls>
+	<source src="./video/demo.mp4" type="video/mp4">
+	Your browser does not support video display.
+</video>
 
 ## Application is available at [https://travel-test-ivory.vercel.app/](https://travel-test-ivory.vercel.app/)
 

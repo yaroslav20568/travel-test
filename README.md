@@ -10,10 +10,7 @@
 
 ## Демонстрация
 
-<video width="600" controls>
-  <source src="./video/demo.mp4" type="video/mp4">
-  Ваш браузер не поддерживает отображение видео.
-</video>
+![Демонстрация работы](video/demo.gif)
 
 ## Приложение доступно по адресу [https://travel-test-ivory.vercel.app/](https://travel-test-ivory.vercel.app/)
 
@@ -139,10 +136,7 @@ The application allows users to browse available travel services, add them to th
 
 ## Demo
 
-<video width="600" controls>
-	<source src="./video/demo.mp4" type="video/mp4">
-	Your browser does not support video display.
-</video>
+![Demo](video/demo.gif)
 
 ## Application is available at [https://travel-test-ivory.vercel.app/](https://travel-test-ivory.vercel.app/)
 
